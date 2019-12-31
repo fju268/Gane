@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
 
     private GameView gameView;
 
@@ -32,25 +32,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.arrow_up:
                 Log.d("MainActivity", "onClick: UP");
-                gameView.setPostY(gameView.getPostY()-50);
-                gameView.invalidate();
+                gameView.moveUp();
                 break;
 
             case R.id.arrow_down:
                 Log.d("MainActivity", "onClick: DOWN");
-                gameView.setPostY(gameView.getPostY()+50);
-                gameView.invalidate();
+                gameView.moveDown();
                 break;
             case R.id.arrow_left:
                 Log.d("MainActivity", "onClick: LEFT");
-                gameView.setPostX(gameView.getPostX()-50);
-                gameView.invalidate();
+                gameView.moveLeft();
                 break;
             case R.id.arrow_right:
                 Log.d("MainActivity", "onClick: RIGHT");
-                gameView.setPostX(gameView.getPostX()+50);
-                gameView.invalidate();
-
+                gameView.moveRight();
                 break;
 
         }
