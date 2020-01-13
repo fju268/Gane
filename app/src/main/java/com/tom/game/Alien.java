@@ -20,11 +20,10 @@ public class Alien extends Thread {
         while (direction!=DIRECTION_NULL){
             switch (direction) {
                 case DIRECTION_RIGHT:
-                    if (x>=0&&x<gameView.getWidth()-400) {
-                        x += 50;
-                        Log.d("ABCCCC", "run: "+x);
+                    if (x>=0&&x<gameView.getWidth()-450) {
+                        x += 40;
+                        Log.d("Right", "run: "+x);
                     }
-
                     try {
                         sleep(100);
                     } catch (InterruptedException e) {
@@ -33,23 +32,44 @@ public class Alien extends Thread {
                     gameView.invalidate();
                     break;
 
-
                 case DIRECTION_LEFT:
                     if (x>0) {
-                        x -= 50;
-                        break;
-                    }
-                case DIRECTION_DOWN:
-                    if (y>=0&&y<gameView.getHeight()-300) {
-                        y += 50;
-                        break;
-                    }
-                case DIRECTION_UP:
-                    if (y>=0) {
-                        y -= 50;
-                        break;
+                        x -= 40;
+                        Log.d("Left", "run: "+x);
                     }
 
+                        try {
+                            sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        gameView.invalidate();
+                        break;
+
+                case DIRECTION_DOWN:
+                    if (y>=0&&y<gameView.getHeight()-450) {
+                        y += 50;
+                        Log.d("Down", "run: "+y);
+                    }
+                    try {
+                        sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    gameView.invalidate();
+                    break;
+                case DIRECTION_UP:
+                    if (y>0) {
+                        y -= 50;
+                        Log.d("Up", "run: "+y);
+                    }
+                    try {
+                        sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    gameView.invalidate();
+                    break;
             }
         }
     }

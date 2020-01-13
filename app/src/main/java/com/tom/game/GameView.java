@@ -36,17 +36,14 @@ public class GameView extends View {
             alien.setDirection(Alien.DIRECTION_RIGHT);
     }
     public  void moveLeft(){
-
+        alien.setDirection(Alien.DIRECTION_LEFT);
     }
     public  void moveUp(){
-
+        alien.setDirection(Alien.DIRECTION_UP);
     }
     public  void moveDown(){
-
+        alien.setDirection(Alien.DIRECTION_DOWN);
     }
-
-
-
 
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
